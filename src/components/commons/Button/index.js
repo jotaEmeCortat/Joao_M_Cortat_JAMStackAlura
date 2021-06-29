@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 import { TextStyleVariantsMap } from '../Text';
