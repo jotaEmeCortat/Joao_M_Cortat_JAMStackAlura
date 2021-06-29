@@ -21,19 +21,6 @@ const TextBase = styled.span`
   ${propToStyle('textAlign')}
   ${propToStyle('marginBottom')}
   ${propToStyle('margin')}
-  /* ${function (props) {
-    console.log('Props, funcao executou');
-    return propToStyle('textAlign', props);
-  }} */
-  /* ${function (props) {
-    return {
-      textAlign: props.textAlign,
-    };
-    // return `
-    //   text-align: ${props.textAlign};
-    // `
-  }} */
-  /* ${(props) => TextStyleVariantsMap.paragraph1} */
 `;
 
 export default function Text({
