@@ -1,57 +1,58 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import get from 'lodash/get';
 import { propToStyle } from '../../../theme/utils/propToStyle';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
-export const TextStyleVariantsMap = {
-  paragraph1: css`
-    font-size: ${({ theme }) => theme.typographyVariants.paragraph1.fontSize};
-    font-weight: ${({ theme }) => theme.typographyVariants.paragraph1.fontWeight};
-    line-height: ${({ theme }) => theme.typographyVariants.paragraph1.lineHeight};
-  `,
-  smallestException: css`
-    font-size: ${({ theme }) => theme.typographyVariants.smallestException.fontSize};
-    font-weight: ${({ theme }) => theme.typographyVariants.smallestException.fontWeight};
-    line-height: ${({ theme }) => theme.typographyVariants.smallestException.lineHeight};
-  `,
-};
+export const TextBase = styled.span`
 
-const TextBase = styled.span`
-  ${(props) => TextStyleVariantsMap[props.variant]}
+  color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
   ${propToStyle('textAlign')}
-  ${propToStyle('marginBottom')}
   ${propToStyle('margin')}
+  ${propToStyle('padding')}
+  font-size: ${({ theme, variant }) => get(theme, `typographyVariants.${variant}.fontSize.sx`)};
+  font-weight: ${({ theme, variant }) => get(theme, `typographyVariants.${variant}.fontWeight`)};
+  line-height: ${({ theme, variant }) => get(theme, `typographyVariants.${variant}.lineHeight`)};
+  ${breakpointsMedia({
+    md: css`
+      font-size: ${({ theme, variant }) => get(theme, `typographyVariants.${variant}.fontSize.md`)};
+    `,
+    lg: css`
+        font-size: ${({ theme, variant }) => get(theme, `typographyVariants.${variant}.fontSize.lg`)};
+    `,
+  })}  
 `;
 
 export default function Text({
-  tag, variant, children, ...props
+  tag,
+  variant,
+  color,
+  children,
+  ...props
 }) {
   return (
     <TextBase
       as={tag}
       variant={variant}
-      // eslint-disable-next-line react/jsx-props-no-spreading
+      color={color}
       {...props}
-      // style
-      // className
-      // e ai vai
     >
       {children}
     </TextBase>
   );
 }
 
-Text.propTypes = {
-  tag: PropTypes.string,
-  variant: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
-
 Text.defaultProps = {
   tag: 'span',
-  variant: 'paragraph1',
+  variant: 'paragraphy',
+  color: 'tertiary.main',
+  children: null,
 };
 
-// p
-// h1, h2 ... h6
-// span
+Text.propTypes = {
+  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span', 'input']),
+  variant: PropTypes.oneOf(['title', 'subTitle', 'paragraphy']),
+  color: PropTypes.node,
+  children: PropTypes.node,
+};

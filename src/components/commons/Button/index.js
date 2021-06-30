@@ -1,56 +1,63 @@
-/* eslint-disable func-names */
+import React from 'react';
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
-import { TextStyleVariantsMap } from '../Text';
+import PropTypes from 'prop-types';
+import { typographyVariants } from '../../../theme/typographyVariants';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 import { propToStyle } from '../../../theme/utils/propToStyle';
 
 const ButtonGhost = css`
-  color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
-  background: transparent; 
+  color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
+  background-color: transparent;
 `;
 
 const ButtonDefault = css`
-  color: white;
-  background-color: ${function (props) {
-    return get(props.theme, `colors.${props.variant}.color`);
-  }};
-  color: ${function (props) {
-    return get(props.theme, `colors.${props.variant}.contrastText`);
-  }};
+  color: ${({ theme, color }) => get(theme, `colors.${color}.contrastText`)};
+  background-color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
 `;
 
-export const Button = styled.button`
+const ButtonWrapper = styled.button`
+  transition: ${({ theme }) => theme.transition};
+  border-radius: ${({ theme }) => theme.borderRadius};
   border: 0;
+  outline: 0;
   cursor: pointer;
   padding: 12px 26px;
-  font-weight: bold;
   opacity: 1;
-  border-radius: 8px;
-  ${TextStyleVariantsMap.smallestException}
-  ${function (props) {
-    // console.log('<Button />', props.variant, props.theme, get(props.theme, `colors.${props.variant}.color`));
-    if (props.ghost) {
-      return ButtonGhost;
-    }
-    return ButtonDefault;
-  }}
-  transition: opacity ${({ theme }) => theme.transition};
-  border-radius: ${(props) => props.theme.borderRadius};
+  font-size: ${typographyVariants.paragraphy.fontSize.sx};
+  font-weight: bold;
+  ${propToStyle('margin')}
+  ${propToStyle('padding')}
+  ${propToStyle('display')}
+  ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)}
+  
+  ${breakpointsMedia({
+    md: css`
+      padding: 12px 43px;
+      font-size: ${typographyVariants.paragraphy.fontSize.md};
+    `,
+  })}
+  
   &:hover,
   &:focus {
     opacity: .5;
   }
-  ${breakpointsMedia({
-    xs: css`
-      /* All devices */
-      ${TextStyleVariantsMap.smallestException}
-    `,
-    md: css`
-     /* From md breakpoint */
-     ${TextStyleVariantsMap.paragraph1}
-    `,
-  })}
-  ${propToStyle('margin')}
-  ${propToStyle('display')}
 `;
+
+export function Button({
+  color, children, ...props
+}) {
+  return (
+    <ButtonWrapper
+      color={color}
+      {...props}
+    >
+      {children}
+    </ButtonWrapper>
+  );
+}
+
+Button.propTypes = {
+  color: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
+};

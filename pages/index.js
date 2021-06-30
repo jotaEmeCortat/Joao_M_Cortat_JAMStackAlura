@@ -21,9 +21,10 @@ export default function Home() {
       <Menu />
 
       <Grid.Container
-        marginTop={{
-          xs: '32px',
-          md: '75px',
+        margin={{
+          xs: '32px auto 0 auto',
+          md: '32px auto 0 auto',
+          xl: '64px auto 0 auto',
         }}
       >
         <Grid.Row>
@@ -34,12 +35,12 @@ export default function Home() {
             alignItems="flex-start"
             justifyContent="center"
             flexDirection="column"
+            padding="0 0 32px 0"
           >
             <Text
               variant="title"
               tag="h1"
               color="tertiary.main"
-              // textAlign="right"
               textAlign={{
                 xs: 'center',
                 md: 'left',
@@ -48,34 +49,36 @@ export default function Home() {
               Compartilhe momentos e conecte-se com amigos
             </Text>
             <Text
-              variant="paragraph1"
+              variant="paragraphy"
               tag="p"
               color="tertiary.light"
               textAlign={{
                 xs: 'center',
                 md: 'left',
               }}
+              padding="16px 0"
             >
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.
             </Text>
 
             <Button
+              display="block"
               margin={{
                 xs: 'auto',
                 md: 'initial',
               }}
-              display="block"
-              variant="primary.main"
+              color="primary.main"
             >
               Cadastrar
             </Button>
           </Grid.Col>
           <Grid.Col
-            value={{
-              xs: 12,
-              md: 6,
-            }}
+            value={{ xs: 12, md: 6 }}
+            offset={{ xs: 0, md: 0 }}
+            display="flex"
+            alignItems="flex-end"
+            justifyContent="center"
           >
             <img
               alt="Imagem de celular com páginas internas do projeto com o perfil do Cage"
@@ -85,7 +88,6 @@ export default function Home() {
           </Grid.Col>
         </Grid.Row>
       </Grid.Container>
-
       <Footer />
     </Box>
   );

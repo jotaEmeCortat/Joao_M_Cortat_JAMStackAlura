@@ -3,21 +3,7 @@ import { Logo } from '../../../theme/Logo';
 import Text from '../Text';
 import { Button } from '../Button';
 import { MenuWrapper } from './style/MenuWrapper';
-
-const links = [
-  {
-    texto: 'Home',
-    url: '/',
-  },
-  {
-    texto: 'Perguntas frequentes',
-    url: '/faq',
-  },
-  {
-    texto: 'Sobre',
-    url: '/sobre',
-  },
-];
+import { links } from './links';
 
 export default function Menu() {
   return (
@@ -28,17 +14,25 @@ export default function Menu() {
       <MenuWrapper.CentralSide>
         {links.map((link) => (
           <li key={link.url}>
-            <Text variant="smallestException" tag="a" href={link.url}>
-              {link.texto}
+            <Text
+              tag="a"
+              variant="paragraphy"
+              color="tertiary.light"
+              href={link.url}
+            >
+              {link.text}
             </Text>
           </li>
         ))}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-        <Button ghost variant="secondary.main">
+        <Button type="button" ghost color="secondary.main">
           Entrar
         </Button>
-        <Button variant="primary.main">
+        <Button
+          type="button"
+          color="primary.main"
+        >
           Cadastrar
         </Button>
       </MenuWrapper.RightSide>
