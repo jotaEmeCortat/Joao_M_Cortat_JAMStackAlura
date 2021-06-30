@@ -10,4 +10,11 @@ export const Box = styled.div`
   ${propToStyle('backgroundImage')}
   ${propToStyle('backgroundRepeat')}
   ${propToStyle('backgroundPosition')}
+  //modal
+  ${propToStyle('backgroundColor')}
+  //formRegister
+  ${propToStyle('background')}
+  ${propToStyle('boxShadow')}
+  ${propToStyle('padding')}
+  ${propToStyle('margin')}
 `;

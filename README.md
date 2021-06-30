@@ -10,10 +10,17 @@ This project was developed using the following technologies:
 
 - [React](https://reactjs.org)
 - [styled-components](https://styled-components.com/)
-- [TypeScript](https://www.typescriptlang.org/)
+
+- [commitizen](https://github.com/commitizen/cz-cli)
+- [@crello/react-lottie](https://crello.github.io/react-lottie/)
+- [framer-motion](https://www.framer.com/motion/)
 - [Lodash](https://lodash.com/)
-- [styled-normalize](https://github.com/sergeysova/styled-normalize)
 - [prop-type]()
+- [husky](https://typicode.github.io/husky/#/)
+- [@styled-icons](https://styled-icons.js.org/)
+- [styled-normalize](https://github.com/sergeysova/styled-normalize)
+
+
 
 ## 🚀 Link
  - https://projeto-final-alura.vercel.app/

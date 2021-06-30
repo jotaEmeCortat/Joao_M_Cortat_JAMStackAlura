@@ -5,9 +5,16 @@
     "dev": "next -p 3001",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "lint": "eslint --ignore-path .gitignore .",
+    "commit": "cz"
   },
   "dependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@crello/react-lottie": "^0.0.11",
+    "@styled-icons/ionicons-solid": "^10.34.0",
+    "framer-motion": "^4.1.17",
     "lodash": "^4.17.21",
     "next": "latest",
     "prop-types": "^15.7.2",
@@ -19,13 +26,29 @@
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0",
+    "commit": "cz",
+    "commitizen": "4.2.4",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.29.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "^11.0.1",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^6.0.0",
+    "init": "0.1.2"
   },
-  "license": "MIT"
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

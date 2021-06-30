@@ -42,6 +42,15 @@ const ButtonWrapper = styled.button`
   &:focus {
     opacity: .5;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .2;
+  }
+  
+  ${({ fullWidth }) => fullWidth && css`
+    width: 100%;
+  `};
 `;
 
 export function Button({
