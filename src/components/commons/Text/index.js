@@ -6,7 +6,6 @@ import { propToStyle } from '../../../theme/utils/propToStyle';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 export const TextBase = styled.span`
-
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
   ${propToStyle('textAlign')}
   ${propToStyle('margin')}

@@ -34,6 +34,10 @@ export const Grid = {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -16px 0 -16px;
+    //forms
+    ${propToStyle('flex')}
+    ${propToStyle('justifyContent')}
+    ${propToStyle('margin')}
   `,
   Col: styled.div`
     padding: 0 16px 0 16px;
@@ -130,5 +134,7 @@ export const Grid = {
     ${propToStyle('alignItems')}
     ${propToStyle('justifyContent')}
     ${propToStyle('flexDirection')}
+    //forms
+    ${propToStyle('padding')}
   `,
 };

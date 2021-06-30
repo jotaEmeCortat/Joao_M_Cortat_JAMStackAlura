@@ -5,8 +5,11 @@ import Text from '../src/components/commons/Text';
 import { Button } from '../src/components/commons/Button';
 import { Grid } from '../src/components/layout/Grid';
 import { Box } from '../src/components/layout/Box';
+import Modal from '../src/components/Modal';
 
 export default function Home() {
+  const [modal, setModal] = React.useState(false);
+
   return (
     <Box
       flex="1"
@@ -18,6 +21,7 @@ export default function Home() {
       backgroundRepeat="no-repeat"
       backgroundPosition="bottom right"
     >
+      <Modal />
       <Menu />
 
       <Grid.Container
@@ -69,6 +73,9 @@ export default function Home() {
                 md: 'initial',
               }}
               color="primary.main"
+              onClick={() => {
+                setModal(!modal);
+              }}
             >
               Cadastrar
             </Button>
