@@ -25,7 +25,7 @@ const Container = styled.div`
       max-width: 1222px;
     `,
   })}
-  ${propToStyle('marginTop')}
+  ${propToStyle('margin')}
 `;
 
 export const Grid = {
@@ -33,16 +33,14 @@ export const Grid = {
   Row: styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin-right: -16px;
-    margin-left: -16px;
+    margin: 0 -16px 0 -16px;
   `,
   Col: styled.div`
-    padding-right: 16px;
-    padding-left: 16px;
+    padding: 0 16px 0 16px;
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
-    ${function ({ value }) {
+    ${({ value }) => {
     if (typeof value === 'number') {
       return css`
           flex-grow: 0;
@@ -94,7 +92,7 @@ export const Grid = {
         : '',
     });
   }}
-    ${function ({ offset }) {
+    ${({ offset }) => {
     if (typeof offset === 'number') {
       return css`
           margin-left: ${(100 * offset) / 12}%;

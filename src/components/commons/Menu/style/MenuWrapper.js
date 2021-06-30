@@ -1,22 +1,18 @@
 import styled, { css } from 'styled-components';
+import theme from '../../../../theme';
 import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
-import { TextStyleVariantsMap } from '../../Text';
 
 export const MenuWrapper = styled.nav`
-  font-family: 'Rubik', sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 18px;
-  padding-left: 28px;
-  padding-right: 28px;
+  margin: 18px 0 0 0;
+  padding: 0 28px 0 28px;
   ${breakpointsMedia({
     md: css`
       justify-content: flex-start;
-      margin-top: 32px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 32px auto 0 auto;
       width: 100%;
       padding: 0 16px;
       max-width: 768px;
@@ -36,15 +32,11 @@ MenuWrapper.LeftSide = styled.div`
   order: 1;
   ${breakpointsMedia({
     md: css`
-        width: 131px;
-        height: 32px;
-      `,
-  })}
-  ${breakpointsMedia({
-    md: css`
+      width: 131px;
+      height: 32px;
       order: initial;
-      padding-right: 16px;
-    `,
+      padding: 0 16px 0 0;
+      `,
   })}
 `;
 
@@ -57,9 +49,9 @@ MenuWrapper.CentralSide = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 17px;
-  border-top: 1px solid #88989E;
-  border-bottom: 1px solid #88989E;
+  margin: 17px 0 0 0;
+  border-top: 1px solid ${theme.colors.tertiary.light.color};
+  border-bottom: 1px solid ${theme.colors.tertiary.light.color};
   padding: 12px;
   
   ${breakpointsMedia({
@@ -78,21 +70,12 @@ MenuWrapper.CentralSide = styled.div`
     text-align: center;
     display: block;
     text-decoration: none;
-    color: #88989E;
-    transition: 200ms ease-in-out;
-    ${breakpointsMedia({
-    xs: css`
-        ${TextStyleVariantsMap.smallestException}
-    `,
-    md: css`
-      ${TextStyleVariantsMap.paragraph1}
-    `,
-  })}
+    transition: ${theme.transition};
+
     &:hover,
     &:focus {
       font-weight: 500;
-      color: #070C0E;
-      
+      color: ${theme.colors.tertiary.main.color};
     }
   }
 `;
