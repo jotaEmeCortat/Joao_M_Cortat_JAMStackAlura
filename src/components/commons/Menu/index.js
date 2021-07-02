@@ -1,17 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Logo } from '../../../theme/Logo';
 import Text from '../Text';
 import { Button } from '../Button';
 import { MenuWrapper } from './style/MenuWrapper';
 import { links } from './links';
+import Link from '../Link';
 
-export default function Menu() {
+export default function Menu({ modal, setModal }) {
   return (
     <MenuWrapper>
       <MenuWrapper.LeftSide>
-        <Logo />
+        <Link
+          href="/"
+          color="secondary.main"
+        >
+          <Logo />
+        </Link>
       </MenuWrapper.LeftSide>
-      <MenuWrapper.CentralSide>
+      <MenuWrapper.CentralSide as="ul">
         {links.map((link) => (
           <li key={link.url}>
             <Text
@@ -26,12 +33,15 @@ export default function Menu() {
         ))}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-        <Button type="button" ghost color="secondary.main">
+        <Button type="button" ghost color="secondary.main" href="/app/login">
           Entrar
         </Button>
         <Button
           type="button"
           color="primary.main"
+          onClick={() => {
+            setModal(!modal);
+          }}
         >
           Cadastrar
         </Button>
@@ -39,3 +49,8 @@ export default function Menu() {
     </MenuWrapper>
   );
 }
+
+Menu.propTypes = {
+  modal: PropTypes.bool.isRequired,
+  setModal: PropTypes.func.isRequired,
+};

@@ -26,6 +26,8 @@ const Container = styled.div`
     `,
   })}
   ${propToStyle('margin')}
+  //faqScreen
+  ${propToStyle('flex')}
 `;
 
 export const Grid = {
@@ -38,6 +40,8 @@ export const Grid = {
     ${propToStyle('flex')}
     ${propToStyle('justifyContent')}
     ${propToStyle('margin')}
+    //faqScreen
+    ${propToStyle('flexDirection')}
   `,
   Col: styled.div`
     padding: 0 16px 0 16px;
@@ -136,5 +140,7 @@ export const Grid = {
     ${propToStyle('flexDirection')}
     //forms
     ${propToStyle('padding')}
+    //faqScreen
+    ${propToStyle('order')}
   `,
 };
