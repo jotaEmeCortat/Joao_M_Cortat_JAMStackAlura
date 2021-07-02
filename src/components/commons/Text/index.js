@@ -4,8 +4,10 @@ import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 import { propToStyle } from '../../../theme/utils/propToStyle';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
+import Link from '../Link';
 
 export const TextBase = styled.span`
+
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
   ${propToStyle('textAlign')}
   ${propToStyle('margin')}
@@ -28,8 +30,22 @@ export default function Text({
   variant,
   color,
   children,
+  href,
   ...props
 }) {
+  if (href) {
+    return (
+      <TextBase
+        as={Link}
+        variant={variant}
+        color={color}
+        href={href}
+        {...props}
+      >
+        {children}
+      </TextBase>
+    );
+  }
   return (
     <TextBase
       as={tag}
@@ -47,6 +63,7 @@ Text.defaultProps = {
   variant: 'paragraphy',
   color: 'tertiary.main',
   children: null,
+  href: '',
 };
 
 Text.propTypes = {
@@ -54,4 +71,5 @@ Text.propTypes = {
   variant: PropTypes.oneOf(['title', 'subTitle', 'paragraphy']),
   color: PropTypes.node,
   children: PropTypes.node,
+  href: PropTypes.string,
 };

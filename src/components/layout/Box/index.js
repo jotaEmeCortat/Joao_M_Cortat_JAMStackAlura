@@ -17,4 +17,7 @@ export const Box = styled.div`
   ${propToStyle('boxShadow')}
   ${propToStyle('padding')}
   ${propToStyle('margin')}
+  //faqScreen
+  ${propToStyle('width')}
+  ${propToStyle('listStyle')}
 `;

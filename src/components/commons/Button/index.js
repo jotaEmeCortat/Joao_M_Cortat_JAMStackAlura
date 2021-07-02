@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
-import PropTypes from 'prop-types';
 import { typographyVariants } from '../../../theme/typographyVariants';
-import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 import { propToStyle } from '../../../theme/utils/propToStyle';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
+import Link from '../Link';
 
 const ButtonGhost = css`
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
@@ -47,26 +48,35 @@ const ButtonWrapper = styled.button`
     cursor: not-allowed;
     opacity: .2;
   }
-  
   ${({ fullWidth }) => fullWidth && css`
     width: 100%;
   `};
 `;
 
-export function Button({
-  color, children, ...props
-}) {
+export const Button = ({
+  href, color, children, ...props
+}) => {
+  const hasHref = Boolean(href);
+  const tag = hasHref ? Link : 'button';
+
   return (
     <ButtonWrapper
+      as={tag}
+      href={href}
       color={color}
       {...props}
     >
       {children}
     </ButtonWrapper>
   );
-}
+};
+
+Button.defaultProps = {
+  href: undefined,
+};
 
 Button.propTypes = {
   color: PropTypes.node.isRequired,
+  href: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
