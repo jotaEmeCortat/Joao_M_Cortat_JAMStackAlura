@@ -28,6 +28,9 @@ const Container = styled.div`
   ${propToStyle('margin')}
   //faqScreen
   ${propToStyle('flex')}
+  //loginScreen
+  ${propToStyle('display')}
+  ${propToStyle('alignItems')}
 `;
 
 export const Grid = {
@@ -142,5 +145,7 @@ export const Grid = {
     ${propToStyle('padding')}
     //faqScreen
     ${propToStyle('order')}
+    //faqResponse
+    ${propToStyle('margin')}
   `,
 };

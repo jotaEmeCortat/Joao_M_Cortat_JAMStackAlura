@@ -16,13 +16,17 @@ const Input = styled(Text)`
 `;
 
 export default function TextField({
+  type,
   placeholder,
   name,
-  onChange,
   value,
-  type,
+  onChange,
+  error,
+  isTouched,
   ...props
 }) {
+  const hasError = Boolean(error);
+  const isFieldInvalid = hasError && isTouched;
   return (
     <InputWrapper>
       <Input
@@ -33,6 +37,16 @@ export default function TextField({
         onChange={onChange}
         {...props}
       />
+      {isFieldInvalid && (
+        <Text
+          variant="paragraphy"
+          tag="p"
+          color="error.main"
+          role="alert"
+        >
+          {error}
+        </Text>
+      )}
     </InputWrapper>
   );
 }
@@ -42,10 +56,17 @@ Input.defaultProps = {
   variant: 'paragraphy',
 };
 
+TextField.defaultProps = {
+  error: '',
+  isTouched: false,
+};
+
 TextField.propTypes = {
+  type: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  error: PropTypes.string,
+  isTouched: PropTypes.bool,
 };

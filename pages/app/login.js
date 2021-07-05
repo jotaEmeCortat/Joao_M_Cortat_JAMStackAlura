@@ -1,13 +1,5 @@
-import React from 'react';
+import LoginScreen from '../../src/components/screens/app/LoginScreen';
 import websitePageHOC from '../../src/components/wrappers/WebsitePage/hoc';
-
-function LoginScreen() {
-  return (
-    <div>
-      Página de Login
-    </div>
-  );
-}
 
 export default websitePageHOC(LoginScreen, {
   pageWrapperProps: {
@@ -16,6 +8,11 @@ export default websitePageHOC(LoginScreen, {
     },
     menuProps: {
       display: false,
+    },
+    pageBoxProps: {
+      backgroundImage: 'url(/images/bubbles.svg)',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'bottom right',
     },
   },
 });
