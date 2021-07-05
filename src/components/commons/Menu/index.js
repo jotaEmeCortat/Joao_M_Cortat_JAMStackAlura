@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Logo } from '../../../theme/Logo';
+import Logo from '../Logo';
 import Text from '../Text';
 import { Button } from '../Button';
 import { MenuWrapper } from './style/MenuWrapper';
@@ -15,7 +15,7 @@ export default function Menu({ modal, setModal }) {
           href="/"
           color="secondary.main"
         >
-          <Logo />
+          <Logo size="small" />
         </Link>
       </MenuWrapper.LeftSide>
       <MenuWrapper.CentralSide as="ul">

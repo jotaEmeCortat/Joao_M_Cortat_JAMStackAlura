@@ -7,37 +7,54 @@
     "start": "next start",
     "export": "next build && next export",
     "lint": "eslint --ignore-path .gitignore .",
-    "commit": "cz"
+    "commit": "cz",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:integration:open": "cypress open",
+    "test:integration": "cypress run --headless"
   },
   "dependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@crello/react-lottie": "^0.0.11",
     "@styled-icons/ionicons-solid": "^10.34.0",
+    "@testing-library/user-event": "^13.1.9",
+    "@types/jest": "^26.0.23",
+    "eslint-plugin-jest": "^24.3.6",
     "framer-motion": "^4.1.17",
+    "jest": "^27.0.6",
     "lodash": "^4.17.21",
     "next": "latest",
+    "nookies": "^2.5.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
     "styled-components": "^5.2.3",
-    "styled-normalize": "^8.0.7"
+    "styled-normalize": "^8.0.7",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/react-hooks": "^7.0.1",
     "babel-plugin-styled-components": "^1.12.0",
     "commit": "cz",
     "commitizen": "4.2.4",
+    "cypress": "^7.6.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.29.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "^11.0.1",
+    "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
-    "init": "0.1.2"
+    "init": "0.1.2",
+    "jest-canvas-mock": "^2.3.1",
+    "jest-styled-components": "^7.0.4"
   },
   "husky": {
     "hooks": {
