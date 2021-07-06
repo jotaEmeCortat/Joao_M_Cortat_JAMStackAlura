@@ -9,6 +9,6 @@ export const links = [
   },
   {
     text: 'Sobre',
-    url: '/sobre',
+    url: '/about',
   },
 ];

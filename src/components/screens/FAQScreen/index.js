@@ -23,8 +23,8 @@ export default function FAQScreen({ faqCategories }) {
             flex={1}
           >
             <Text
-              variant="title"
-              tag="h1"
+              variant="subTitle"
+              tag="h2"
               color="tertiary.main"
               textAlign="center"
               padding={{ xs: '16px 0 16px 0' }}

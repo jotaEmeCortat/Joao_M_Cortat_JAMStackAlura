@@ -20,8 +20,8 @@ const loginSchema = yup.object().shape({
 export default function LoginForm() {
   const router = useRouter();
   const initialValues = {
-    username: '',
-    password: '',
+    username: 'omariosouto',
+    password: 'senhasegura',
   };
 
   const form = useForm({
