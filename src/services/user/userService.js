@@ -14,7 +14,9 @@ export const userService = {
       });
       return {
         user: {
-          totalLikes: 0,
+          publicacoes: response.data.length,
+          seguindo: 1,
+          seguidores: 1,
         },
         posts: response.data,
       };
