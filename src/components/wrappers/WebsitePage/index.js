@@ -16,6 +16,7 @@ export default function WebsitePageWrapper({
   seoProps,
   pageBoxProps,
   menuProps,
+  footerProps,
 }) {
   const [modal, setModal] = React.useState(false);
 
@@ -57,7 +58,9 @@ export default function WebsitePageWrapper({
 
         {children}
 
+        {footerProps.display && (
         <Footer />
+        )}
 
       </Box>
     </WebsitePageContext.Provider>
@@ -67,7 +70,6 @@ export default function WebsitePageWrapper({
 WebsitePageWrapper.defaultProps = {
   seoProps: {},
   pageBoxProps: {},
-  modalProps: true,
   menuProps: {
     display: true,
   },
@@ -80,7 +82,6 @@ WebsitePageWrapper.propTypes = {
   seoProps: PropTypes.shape({
     headTitle: PropTypes.string,
   }),
-  modalProps: PropTypes.bool,
   menuProps: PropTypes.shape({
     display: PropTypes.bool,
   }),
@@ -91,6 +92,7 @@ WebsitePageWrapper.propTypes = {
     backgroundImage: PropTypes.string,
     backgroundRepeat: PropTypes.string,
     backgroundPosition: PropTypes.string,
+    backgroundColor: PropTypes.string,
   }),
   children: PropTypes.node.isRequired,
 };

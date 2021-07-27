@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
 import ProfileScreen from '../../../src/components/screens/app/ProfileScreen';
 import websitePageHOC from '../../../src/components/wrappers/WebsitePage/hoc';
-import { authService } from '../../../src/services/auth/authService';
-/* import { userService } from '../../../src/services/user/userService'; */
+import authService from '../../../src/services/auth/authService';
 
 export async function getServerSideProps(ctx) {
   const auth = authService(ctx);

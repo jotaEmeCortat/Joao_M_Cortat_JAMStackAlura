@@ -7,7 +7,10 @@ export const typographyVariants = {
   },
   // [subTitle]
   subTitle: {
-    fontSize: '24px',
+    fontSize: {
+      sx: '18px',
+      md: '24px',
+    },
     fontWeight: '500',
     lineHeight: 1.25, // 125%
   },

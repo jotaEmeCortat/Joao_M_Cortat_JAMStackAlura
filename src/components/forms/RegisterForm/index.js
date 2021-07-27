@@ -116,6 +116,22 @@ export default function RegisterForm() {
         Cadastrar
       </Button>
 
+      <Text
+        variant="paragraphy"
+        tag="p"
+        color="tertiary.light"
+        textAlign="center"
+        padding="16px 0 0 0"
+      >
+        {'Já tem uma conta? '}
+        <Text
+          href="/login"
+          variant="paragraphy"
+          color="secondary.main"
+        >
+          Entrar
+        </Text>
+      </Text>
       {/* AULA 02.04 */}
 
       {formSubmited && submissionStatus === formStates.ERROR && (

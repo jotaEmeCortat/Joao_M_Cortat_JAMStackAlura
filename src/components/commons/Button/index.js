@@ -73,10 +73,11 @@ export const Button = ({
 
 Button.defaultProps = {
   href: undefined,
+  color: null,
 };
 
 Button.propTypes = {
-  color: PropTypes.node.isRequired,
+  color: PropTypes.node,
   href: PropTypes.string,
   children: PropTypes.node.isRequired,
 };

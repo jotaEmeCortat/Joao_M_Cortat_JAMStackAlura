@@ -5,6 +5,7 @@ module.exports = {
   images: {
     deviceSizes: [320, 640, 768, 1024, 1600],
     domains: [
+      'www.gsselectcar.com.br',
       'assets.pokemon.com',
       'github.com',
       'unavatar.now.sh',
@@ -19,6 +20,7 @@ module.exports = {
       'images.all-free-download.com',
       'ichef.bbci.co.uk',
       'cdn.leroymerlin.com.br',
+      'pluralsight.imgix.net',
     ],
   },
   async redirects() {

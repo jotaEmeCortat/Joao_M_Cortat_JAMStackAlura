@@ -19,11 +19,13 @@ export const ModalWrapper = styled.div`
       return css`
         opacity: 1;
         pointer-events: all;
+        overflow: hidden;
       `;
     }
     return css`
       opacity: 0;
       pointer-events: none;
+      overflow: hidden;
     `;
   }}
 `;
@@ -38,7 +40,7 @@ ModalWrapper.ModalHeader = styled.div`
   /* margin: 0 -16px 0 -16px; */
 `;
 
-ModalWrapper.ModalFooter = styled.div`
+/* ModalWrapper.ModalFooter = styled.div`
   display:flex;
   justify-content:center;
-`;
+`; */
