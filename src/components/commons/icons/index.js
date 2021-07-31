@@ -1,8 +1,11 @@
 import styled from 'styled-components';
-import { Close, AddCircle } from 'styled-icons/ionicons-solid';
+import { Close, AddCircle, PaperPlane } from 'styled-icons/ionicons-solid';
 import {
   Heart, HomeAlt, Search,
+  Bookmark, MessageRounded,
 } from 'styled-icons/boxicons-regular';
+import { ThreeDots } from 'styled-icons/bootstrap';
+import { GithubOutline } from 'styled-icons/evaicons-outline';
 import Image from 'next/image';
 import { colors } from '../../../theme/colors';
 
@@ -42,7 +45,35 @@ export const SearchIcon = styled(Search)`
 
 export const AvatarIcon = styled(Image)`
   border-radius: 50%;
-/*   border-width: 2px;
-  border-color:#D7385E;
-  border-style: solid; */
+`;
+
+export const PaperPlaneIcon = styled(PaperPlane)`
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+`;
+
+export const BookmarkIcon = styled(Bookmark)`
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+`;
+
+export const MessageRoundedIcon = styled(MessageRounded)`
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+`;
+
+export const ThreeDotsIcon = styled(ThreeDots)`
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+`;
+
+export const GithubOutlineIcon = styled(GithubOutline)`
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  color:${colors.secondary.main.color};
 `;
