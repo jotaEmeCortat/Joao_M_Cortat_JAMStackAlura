@@ -21,6 +21,7 @@ module.exports = {
       'ichef.bbci.co.uk',
       'cdn.leroymerlin.com.br',
       'pluralsight.imgix.net',
+      'images.unsplash.com',
     ],
   },
   async redirects() {

@@ -10,7 +10,6 @@ import { Button } from '../../commons/Button';
 import Modal from '../../Modal';
 import UploadForm from '../../forms/UploadForm';
 
-// eslint-disable-next-line react/prop-types
 export default function MenuLogged({ photo }) {
   const [modal, setModal] = React.useState(false);
   return (

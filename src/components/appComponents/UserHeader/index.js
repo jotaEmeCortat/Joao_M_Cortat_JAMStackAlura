@@ -25,10 +25,13 @@ export default function UserHeader({ user, photo }) {
         statsNumber={user.seguidores}
         statsTitle="Seguidores"
       />
-      <UserStats
-        statsNumber={user.name}
-        statsTitle={user.bio}
-      />
+      <UserHeaderWrapper.UserName>
+        <UserStats
+          statsNumber={user.name}
+          statsTitle={user.bio}
+        />
+      </UserHeaderWrapper.UserName>
+
     </UserHeaderWrapper>
 
   );

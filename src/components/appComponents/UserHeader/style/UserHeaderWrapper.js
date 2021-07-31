@@ -31,3 +31,10 @@ export const UserHeaderWrapper = styled.div`
   })}
   }
 `;
+
+UserHeaderWrapper.UserName = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0px 16px;
+`;

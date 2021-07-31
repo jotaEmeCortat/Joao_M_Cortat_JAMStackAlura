@@ -35,24 +35,14 @@ export default function Posts({ posts }) {
             flex="1 0 25%"
             margin={{ xs: '4px', md: '8px' }}
             key={post._id}
+            className={`filter-${post.filter}`}
           >
-            <button
-              type="button"
-              style={{
-                cursor: 'pointer',
-              }}
-            >
-              <Image
-                alt={post.description}
-                src={post.photoUrl}
-                width="279px"
-                height="279px"
-              />
-              <div key={post._id}>
-                {post.likes}
-              </div>
-            </button>
-
+            <Image
+              alt={post.description}
+              src={post.photoUrl}
+              width="279px"
+              height="279px"
+            />
           </Box>
         ))}
       </Box>
