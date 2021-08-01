@@ -9,8 +9,6 @@ import UserHeader from '../../../appComponents/UserHeader';
 
 export default function ProfileScreen({ user }) {
   const dados = useUserService.getProfilePage();
-  console.log(dados);
-
   return (
     <>
       {dados.data && (

@@ -132,19 +132,12 @@ export default function RegisterForm() {
           Entrar
         </Text>
       </Text>
-      {/* AULA 02.04 */}
 
       {formSubmited && submissionStatus === formStates.ERROR && (
         <Box
           display="flex"
           justifyContent="center"
-        >
-          {/* <Lottie
-            width="150px"
-            height="150px"
-            config={{ animationData: errorAnimation, loop: true, autoplay: true }}
-          /> */}
-        </Box>
+        />
       )}
     </form>
   );
