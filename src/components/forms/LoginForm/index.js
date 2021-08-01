@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import { Button } from '../../commons/Button';
 import TextField from '../TextFild';
 import useForm from '../../../infra/hook/useForm';
-import { loginService } from '../../../services/login/loginService';
+import loginService from '../../../services/login/loginService';
 
 const loginSchema = yup.object().shape({
   username: yup

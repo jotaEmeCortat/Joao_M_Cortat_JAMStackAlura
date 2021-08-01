@@ -25,4 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
+  li {
+    list-style:none;
+  }
 `;

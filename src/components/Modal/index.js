@@ -5,7 +5,7 @@ import { createGlobalStyle } from 'styled-components';
 import { ModalWrapper } from './style/ModalWrapper';
 import { Grid } from '../layout/Grid';
 import { Box } from '../layout/Box';
-import Text from '../commons/Text';
+/* import Text from '../commons/Text'; */
 import { CloseButton } from '../commons/icons';
 
 export const LockScroll = createGlobalStyle`
@@ -81,25 +81,12 @@ export default function Modal({
                 <ModalWrapper.ModalHeader>
                   <CloseButton onClick={onClose} />
                 </ModalWrapper.ModalHeader>
+
                 {children}
-                <ModalWrapper.ModalFooter>
-                  <Text
-                    variant="paragraphy"
-                    tag="p"
-                    color="tertiary.light"
-                    textAlign="center"
-                    padding="16px 0 0 0"
-                  >
-                    {'Já tem uma conta? '}
-                    <Text
-                      href="/login"
-                      variant="paragraphy"
-                      color="secondary.main"
-                    >
-                      Entrar
-                    </Text>
-                  </Text>
-                </ModalWrapper.ModalFooter>
+
+                {/*                 <ModalWrapper.ModalFooter>
+
+                </ModalWrapper.ModalFooter> */}
               </Box>
             </Grid.Col>
           </Grid.Row>

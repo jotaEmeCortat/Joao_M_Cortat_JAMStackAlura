@@ -13,7 +13,6 @@ export default function Menu({ modal, setModal }) {
       <MenuWrapper.LeftSide>
         <Link
           href="/"
-          color="secondary.main"
         >
           <Logo size="small" />
         </Link>

@@ -116,19 +116,28 @@ export default function RegisterForm() {
         Cadastrar
       </Button>
 
-      {/* AULA 02.04 */}
+      <Text
+        variant="paragraphy"
+        tag="p"
+        color="tertiary.light"
+        textAlign="center"
+        padding="16px 0 0 0"
+      >
+        {'Já tem uma conta? '}
+        <Text
+          href="/login"
+          variant="paragraphy"
+          color="secondary.main"
+        >
+          Entrar
+        </Text>
+      </Text>
 
       {formSubmited && submissionStatus === formStates.ERROR && (
         <Box
           display="flex"
           justifyContent="center"
-        >
-          {/* <Lottie
-            width="150px"
-            height="150px"
-            config={{ animationData: errorAnimation, loop: true, autoplay: true }}
-          /> */}
-        </Box>
+        />
       )}
     </form>
   );

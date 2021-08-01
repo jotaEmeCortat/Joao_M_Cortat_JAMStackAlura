@@ -1,20 +1,23 @@
-import { parseCookies } from 'nookies';
 import { BASE_URL, HttpClient } from '../../infra/http/HttpClient';
-import { LOGIN_COOKIE_APP_TOKEN } from '../login/loginService';
+import authService from '../auth/authService';
 
-export const userService = {
+const userService = {
   async getProfilePage(ctx) {
+    const url = `${BASE_URL}/api/users/posts`;
     try {
-      const cookies = parseCookies(ctx);
-      const token = cookies[LOGIN_COOKIE_APP_TOKEN];
-      const response = await HttpClient(`${BASE_URL}/api/users/posts`, {
+      const token = await authService(ctx).getToken();
+      const response = await HttpClient(url, {
         headers: {
           authorization: `Bearer ${token}`,
         },
       });
+
       return {
         user: {
-          totalLikes: 0,
+          bio: 'Sempre no 220v, atrás de um filme/rolê e codando desafios em JS',
+          publicacoes: response.data.length,
+          seguindo: '22k',
+          seguidores: '134k',
         },
         posts: response.data,
       };
@@ -23,3 +26,5 @@ export const userService = {
     }
   },
 };
+
+export default userService;

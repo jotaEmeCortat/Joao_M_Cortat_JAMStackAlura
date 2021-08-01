@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import ProfileScreen from '../../../src/components/screens/app/ProfileScreen';
+import FeedScreen from '../../../src/components/screens/app/FeedScreen';
 import websitePageHOC from '../../../src/components/wrappers/WebsitePage/hoc';
 import authService from '../../../src/services/auth/authService';
 
@@ -26,10 +26,10 @@ export async function getServerSideProps(ctx) {
   };
 }
 
-export default websitePageHOC(ProfileScreen, {
+export default websitePageHOC(FeedScreen, {
   pageWrapperProps: {
     seoProps: {
-      headTitle: 'Profile',
+      headTitle: 'Feed',
     },
     menuProps: {
       display: false,
