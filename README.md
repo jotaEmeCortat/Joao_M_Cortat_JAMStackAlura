@@ -46,4 +46,5 @@ You can view the project layout through the links below:
 
 Remembering that you need to have a [Figma](http://figma.com/) account to access it.
 
-<p align="center">Made with 🛸 by jotaEme Cortat</p>
+<p align="center">Made with by jotaEme Cortat 🛸</p>
+<p align="center">***"just seek knowledge"***</p>
